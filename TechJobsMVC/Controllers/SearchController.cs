@@ -18,5 +18,28 @@ namespace TechJobsMVC.Controllers
         }
 
         // TODO #3: Create an action method to process a search request and render the updated search view. 
+
+       public IActionResult Results(string searchType, string searchTerm)
+        {
+            if(searchType.Equals(" ") && searchTerm.Equals(" "))
+            {
+
+                //This code probs exists in the search controller
+               // call FindAll()
+
+                //store results in a "jobs" list
+
+                //give it to the Search/Index via VIewBag
+            }
+
+            else
+            {
+                //send parameters to FindByColumnAndValue
+                //store in a "jobs" list
+                //pass to Search/Index via Viewbag
+            }
+
+        }
+       
     }
 }
