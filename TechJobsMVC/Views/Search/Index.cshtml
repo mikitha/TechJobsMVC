@@ -18,7 +18,7 @@
 
         <p>
             <label for="searchTerm">Keyword:</label>
-            <input type="text" name="searchTerm" id="searchTerm" />
+            <input type="text" name="searchTerm" id="searchTerm" required="required"/>
         </p>
 
         <input type="submit" value="Search" />
@@ -28,6 +28,17 @@
 
     @{
         //TODO #4: Loop over the search results to display all job fields.
+        foreach (var job in ViewBag.jobs)
+        {
+            <table class="job-listing">
+        <tr><td> ID </td> <td> @job.Id </td> </tr>
+        <tr><td>Employer</td><td> @job.Employer</td></tr>
+        <tr><td>Location</td><td> @job.Location</td></tr>
+        <tr><td>Position Type</td><td> @job.PositionType</td></tr>
+        <tr><td>Skill</td><td> @job.CoreCompetency</td></tr>
+        </table>
+        }
+
     }
 
 </div>
